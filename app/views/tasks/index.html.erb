@@ -1,10 +1,13 @@
 <h1>My tasks</h1>
-
+<div class="cards">
 <% @tasks.each do |task|
     checkbox = task.completed ? "X" : "" %>
+    <div class="card">
   <h2><%= link_to task.title, task_path(task) %></h2> <p>done: <%= checkbox %></p>
   <%= link_to "Edit the task", edit_task_path(task) %>
   <%= link_to "Delete this task", delete_task_path(task), method: :delete %>
+  </div>
 <% end %>
 
 <%= link_to "Add a new task", new_task_path %>
+</div>
